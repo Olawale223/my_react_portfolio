@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import logo from '../assets/logo.svg';  
+import logo2 from '../assets/logo2.svg';
 
 function HeaderNavbar() {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -28,7 +28,7 @@ function HeaderNavbar() {
       <header className="header" ref={headerRef}>
         <div className="container">
           <a href="#" className="logo">
-            <img src={logo} 
+            <img src={logo2} 
             width="170" 
             height="40" 
             alt="Pfolio home" />

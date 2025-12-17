@@ -12,7 +12,7 @@ function Footer() {
         </li>
 
         <li>
-          <a href="mailto:info@kwilliams.com" className="footer-link">info@kwilliams.com</a>
+          <a href="mailto:lawalabdullateef16@gmail.com" className="footer-link">lawalabdullateef16@gmail.com</a>
         </li>
 
       </ul>
@@ -24,7 +24,7 @@ function Footer() {
         </li>
 
         <li>
-          <a href="#" className="footer-link">San Francisco — California</a>
+          <a href="#" className="footer-link">Lagos - Nigeria</a>
         </li>
 
       </ul>
@@ -32,8 +32,8 @@ function Footer() {
       <ul className="social-list">
 
         <li>
-          <a href="#" className="social-link">
-            <ion-icon name="logo-dribbble"></ion-icon>
+          <a href="https://github.com/Olawale223" className="social-link">
+            <ion-icon name="logo-github"></ion-icon>
           </a>
         </li>
 

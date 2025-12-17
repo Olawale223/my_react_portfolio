@@ -4,7 +4,6 @@ import Skills from './components/Skills.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Footer from './components/Footer.jsx'
 import Services from './components/Services.jsx'
-import Header from './components/Header.jsx'
 import './App.css'
 import HeaderNavbar from './components/HeaderNavbar.jsx'
 
@@ -15,10 +14,8 @@ import HeaderNavbar from './components/HeaderNavbar.jsx'
 function App() {
   return (
     <div>
-      {/* <Header/> */}
       <HeaderNavbar/>
       <Sections />
-      
       <Services />
       <Skills />
       <Portfolio />

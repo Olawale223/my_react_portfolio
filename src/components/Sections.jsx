@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/hero-banner.jpg'
+import pf1 from '../assets/pf1.jpg'
 
 
 function Sections() {
@@ -13,7 +13,7 @@ function Sections() {
 
           <div className="hero-banner">
             <img
-              src={heroImage}
+              src={pf1}
               width="800"
               height="800"
               alt="olawale"

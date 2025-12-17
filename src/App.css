@@ -26,9 +26,9 @@ body {
    * colors
    */
 
-  --raisin-black: hsla(231, 10%, 14%, 1);
+  --raisin-black: rgb(42, 43, 53);
   --roman-silver: hsla(229, 10%, 57%, 1);
-  --eerie-black: hsla(228, 9%, 10%, 1);
+  --eerie-black: rgb(29, 30, 32);
   --black: hsla(0, 0%, 0%, 1);
   --white: hsla(0, 0%, 100%, 1);
   --white_a10: hsla(0, 0%, 100%, 0.1);
@@ -422,47 +422,59 @@ body.nav-active { overflow: hidden; }
 .nav-toggle-btn.active .line-2 { transform: rotate(-45deg) translate(3px, -2px); }
 
 .navbar {
-  position: absolute;
-  top: 100%;
-  right: -370px;
-  max-width: 270px;
-  width: 100%;
+  position: fixed; /* stay on top of content */
+  top: 0;
+  right: -370px; /* hide off-screen by default */
+  width: 270px;
+  height: 100vh; /* full viewport height */
   background-color: var(--white);
-  height: 100vh;
-  text-align: center;
-  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* evenly distribute vertically */
+  align-items: center; /* center horizontally */
+  gap: 40px; /* space between links */
   visibility: hidden;
-  transition: 0.25s var(--cubic-in);
-  z-index: 1;
+  transition: transform 0.25s var(--cubic-in);
+  z-index: 5;
+  padding: 0 20px;
 }
 
 .navbar.active {
-  transform: translateX(-370px);
+  transform: translateX(-370px); /* slide in */
   visibility: visible;
   transition-timing-function: var(--cubic-out);
 }
 
+/* Make nav links larger and easier to tap */
 .navbar-link {
-  color: var(--raisin-black);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-700);
-  padding-block: 10px;
+  color: var(--eerie-black);
+  padding: 12px 0;
+  width: 100%;
+  text-align: center;
   transition: var(--transition-1);
 }
 
-.navbar-link:is(:hover, :focus-visible) { text-shadow: 1px 0 0 var(--eerie-black); }
+.navbar-link:is(:hover, :focus-visible) {
+  text-shadow: 0.1px 0 0 var(--raisin-black);
+}
 
+/* Overlay remains full page */
 .overlay {
-  position: absolute;
-  top: 100%;
+  position: fixed; /* fixed to cover viewport */
+  top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
 }
 
-.overlay.active { display: block; }
-
+.overlay.active {
+  display: block;
+}
 
 
 

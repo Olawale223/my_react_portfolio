@@ -73,9 +73,9 @@ function Portfolio() {
           <h2 className="h2 section-title">Portfolio</h2>
         </div>
         <p className="section-text">
-          Phasellus et lacus suscipit congue nisl the volutpat magna. Donec miss
-          the drana risus tincidunt convallis velit orci congue tortor eu
-          dignissim ipsum suam non odio.
+          Take a look at some of the projects where I’ve transformed ideas into digital experiences.
+          From web applications to creative software solutions,
+          each project reflects innovation, functionality, and a commitment to shaping the digital future.
         </p>
       </div>
 

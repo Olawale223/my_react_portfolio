@@ -45,7 +45,8 @@ function Services() {
             <p className="section-subtitle">Services That I Provide</p>
             <h2 className="h2 section-title" id="service-label">Services</h2>
           </div>
-          <p className="section-text">Phasellus et lacus suscipit congue nisl the volutpat magna...</p>
+          <p className="section-text">I offer a range of services to help businesses and individuals establish a strong digital presence. 
+            Each service is tailored to deliver results, combining creativity with technical expertise.</p>
         </div>
 
         <div className="slider">

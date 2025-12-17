@@ -2,9 +2,9 @@ import React from 'react';
 
 function Skills() {
   const skills = [
-    { name: 'Illustrations', value: 60 },
-    { name: 'Development', value: 80 },
-    { name: 'Web Design', value: 95 },
+    { name: 'Illustrations', value: 72 },
+    { name: 'Development', value: 70 },
+    { name: 'Web Design', value: 75 },
     { name: 'Graphic Design', value: 85 },
   ];
 
@@ -18,10 +18,10 @@ function Skills() {
           {/* Text Content */}
           <div>
             <p className="section-text">
-              Pellentesque magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi senectus dictum.
+             I develop and shape the digital future by creating innovative, user-focused web and software solutions. 
             </p>
             <p className="section-text">
-              Web design magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi tristique senectus the neuse malesuada nullam ac lorem miss the duru.
+              Turn ideas into efficient, scalable, and impactful digital experiences that make a difference..
             </p>
             <a href="lawalabdullateef16@gmail.com" className="btn has-before">
               lawalabdullateef16@gmail.com

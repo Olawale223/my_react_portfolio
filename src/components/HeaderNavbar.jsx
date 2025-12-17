@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
+import { HashLink as Link } from "react-router-hash-link"; // <-- for smooth scrolling
 import logo2 from '../assets/logo2.svg';
 
 function HeaderNavbar() {
   const [isNavActive, setIsNavActive] = useState(false);
   const headerRef = useRef(null);
 
-  // Scroll effect for header background
+  const toggleNavbar = () => setIsNavActive(!isNavActive);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 100) {
@@ -14,27 +16,18 @@ function HeaderNavbar() {
         headerRef.current.classList.remove("active");
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleNavbar = () => {
-    setIsNavActive(!isNavActive);
-  };
 
   return (
     <>
       <header className="header" ref={headerRef}>
         <div className="container">
-          <a href="#" className="logo">
-            <img src={logo2} 
-            width="170" 
-            height="40" 
-            alt="Pfolio home" />
-          </a>
+          <Link smooth to="#home" className="logo" onClick={() => setIsNavActive(false)}>
+            <img src={logo2} width="170" height="40" alt="Pfolio home" />
+          </Link>
 
-          {/* Toggle button */}
           <button
             className={`nav-toggle-btn ${isNavActive ? "active" : ""}`}
             onClick={toggleNavbar}
@@ -46,23 +39,17 @@ function HeaderNavbar() {
         </div>
       </header>
 
-      {/* Navbar */}
       <nav className={`navbar ${isNavActive ? "active" : ""}`}>
         <ul className="navbar-list">
-          <li><a href="#" className="navbar-link">Home</a></li>
-          <li><a href="#" className="navbar-link">Resume</a></li>
-          <li><a href="#" className="navbar-link">Services</a></li>
-          <li><a href="#" className="navbar-link">Portfolio</a></li>
-          <li><a href="#" className="navbar-link">Blog</a></li>
-          <li><a href="#" className="navbar-link">Contact</a></li>
+          <li><Link smooth to="#home" className="navbar-link" onClick={() => setIsNavActive(false)}>About</Link></li>
+          <li><Link smooth to="#resume" className="navbar-link" onClick={() => setIsNavActive(false)}>Resume</Link></li>
+          <li><Link smooth to="#services" className="navbar-link" onClick={() => setIsNavActive(false)}>Services</Link></li>
+          <li><Link smooth to="#portfolio" className="navbar-link" onClick={() => setIsNavActive(false)}>Portfolio</Link></li>
+          <li><Link smooth to="#contact" className="navbar-link" onClick={() => setIsNavActive(false)}>Contact</Link></li>
         </ul>
       </nav>
 
-      {/* Overlay */}
-      <div
-        className={`overlay ${isNavActive ? "active" : ""}`}
-        onClick={toggleNavbar}
-      ></div>
+      <div className={`overlay ${isNavActive ? "active" : ""}`} onClick={toggleNavbar}></div>
     </>
   );
 }

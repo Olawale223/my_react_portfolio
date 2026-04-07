@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from "react";
-
-import portfolio1 from "../assets/portfolio-1.jpg";
-import portfolio2 from "../assets/portfolio-2.jpg";
-import portfolio3 from "../assets/portfolio-3.jpg";
-import portfolio4 from "../assets/portfolio-4.jpg";
-import portfolio5 from "../assets/portfolio-5.jpg";
-import portfolio6 from "../assets/portfolio-6.jpg";
+import portfolioData from "./pfolioitem";
 
 function Portfolio() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(3);
-  const [isPaused, setIsPaused] = useState(false); // ✅ NEW
-
-  const portfolioImages = [
-    portfolio1,
-    portfolio2,
-    portfolio3,
-    portfolio4,
-    portfolio5,
-    portfolio6,
-  ];
+  const [isPaused, setIsPaused] = useState(false);
 
   /* -------------------------------
      Handle responsive slide count
@@ -39,7 +24,7 @@ function Portfolio() {
   /* -------------------------------
      Slider logic
   -------------------------------- */
-  const maxSlide = 1;
+  const maxSlide = Math.ceil(portfolioData.length / visibleSlides) - 1; // ✅ FIXED
 
   const slideNext = () => {
     setCurrentSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
@@ -57,7 +42,7 @@ function Portfolio() {
 
     const interval = setInterval(() => {
       slideNext();
-    }, 6000); // 10 seconds
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [isPaused, visibleSlides]);
@@ -82,8 +67,8 @@ function Portfolio() {
       {/* ---------- SLIDER ---------- */}
       <div
         className="slider"
-        onMouseEnter={() => setIsPaused(true)}   // ✅ pause
-        onMouseLeave={() => setIsPaused(false)} // ✅ resume
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         <ul
           className="slider-container"
@@ -95,29 +80,33 @@ function Portfolio() {
             transform: `translateX(-${currentSlide * 100}%)`,
           }}
         >
-          {portfolioImages.map((image, index) => (
+          {portfolioData.map((item, index) => (
             <li className="slider-item" key={index}>
               <div
                 className="portfolio-card img-holder"
                 style={{ "--width": 600, "--height": 600 }}
               >
                 <img
-                  src={image}
+                  src={item.image}
                   width="600"
                   height="600"
                   loading="lazy"
-                  alt={`Portfolio ${index + 1}`}
+                  alt={item.title}
                   className="img-cover"
                 />
 
                 <div className="card-content">
-                  <h3 className="h3 card-title">
-                    PORTFOLIO {index + 1}
-                  </h3>
+                  <h3 className="h3 card-title">{item.title}</h3>
                   <p className="card-text">Website Design</p>
                 </div>
 
-                <a href="#" className="layer-link"></a>
+                {/* ✅ CLICKABLE LINK */}
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="layer-link"
+                ></a>
               </div>
             </li>
           ))}

@@ -19,23 +19,24 @@ const portfolioData = [
     },
     {
         image: portfolio3,
-        title: "Project Three",
-        url: "https://example.com/project-three"
+        title: "Contact Trace",
+        url: "https://www.figma.com/design/8LZ3Uweag1uyskf4vb90J5/APP---Contact-Trace?node-id=73-4094&t=y1O90M8uXRTFXLEO-1"
     },
     {
         image: portfolio4,
-        title: "Project Four",
-        url: "https://example.com/project-four"
-    },
+        title: "Oga Repair",
+        url: "https://www.figma.com/design/KpFc4D8Xn2ubVfDyB7xVgS/Oga-Repair?node-id=201-17&t=AXNKokOXNkkORbCp-1"
+    }
+    ,
     {
         image: portfolio5,
         title: "Project Five",
-        url: "https://example.com/project-five"
+        url: "#"
     },
     {
         image: portfolio6,
         title: "Project Six",
-        url: "https://example.com/project-six"
+        url: "#"
     }
 ];
 

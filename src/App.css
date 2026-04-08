@@ -633,6 +633,10 @@ body.nav-active {
   transition: var(--transition-2);
 }
 
+/* .service .slider {
+  --item-gap: 16px;
+} */
+
 .service-card .card-icon ion-icon {
   color: var(--content-color, var(--raisin-black));
   font-size: 6rem;
@@ -837,6 +841,7 @@ body.nav-active {
     --item-gap: 0px;
   }
 
+
   /**
    * FOOTER
    */
@@ -849,7 +854,16 @@ body.nav-active {
 
 
 
+@media (max-width: 574px) {
 
+  /* .portfolio .slider {
+    --item-gap: 0px;
+  } */
+  .service .slider {
+    --item-gap: 0px;
+  }
+
+}
 
 /**
  * responsive for large than 768px screen

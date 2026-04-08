@@ -26,12 +26,21 @@ function Services() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // const slideNext = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % 2);
+  // };
+
+  // const slidePrev = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + slidesData.length) % 2);
+  // };
+  const maxSlide = slidesData.length - visibleSlides;
+
   const slideNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % 2);
+    setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
   };
 
   const slidePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slidesData.length) % 2);
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
   };
 
   const slideWidth = 100 / visibleSlides;

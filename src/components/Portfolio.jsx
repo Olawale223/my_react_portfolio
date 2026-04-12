@@ -42,7 +42,7 @@ function Portfolio() {
 
     const interval = setInterval(() => {
       slideNext();
-    }, 6000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isPaused, visibleSlides]);
@@ -97,7 +97,7 @@ function Portfolio() {
 
                 <div className="card-content">
                   <h3 className="h3 card-title">{item.title}</h3>
-                  <p className="card-text">Website Design</p>
+                  <p className="card-text">{item.category}</p>
                 </div>
 
                 {/* ✅ CLICKABLE LINK */}

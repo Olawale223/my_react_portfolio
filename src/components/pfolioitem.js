@@ -39,7 +39,7 @@ const portfolioData = [
         category: "Website Development"
     },
     {
-        image: portfolio4,
+        image: portfolio6,
         title: "Oga Repair",
         url: "https://ogarepair.netlify.app/",
         category: "Website Development"

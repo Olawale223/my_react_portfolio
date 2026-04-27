@@ -23,9 +23,10 @@ function Skills() {
             <p className="section-text">
               Turn ideas into efficient, scalable, and impactful digital experiences that make a difference..
             </p>
-            <a href="lawalabdullateef16@gmail.com" className="btn has-before">
-              lawalabdullateef16@gmail.com
-            </a>
+            
+          
+            <a href="mailto:lawalabdullateef16@gmail.com" className="btn has-before">lawalabdullateef16@gmail.com</a>
+          
           </div>
 
           {/* Skills List */}

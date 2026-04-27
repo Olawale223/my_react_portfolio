@@ -39,10 +39,10 @@ const portfolioData = [
         category: "Website Development"
     },
     {
-        image: portfolio6,
-        title: "Project Six",
-        url: "#",
-        category: "UI/UX Design"
+        image: portfolio4,
+        title: "Oga Repair",
+        url: "https://ogarepair.netlify.app/",
+        category: "Website Development"
     }
 ];
 

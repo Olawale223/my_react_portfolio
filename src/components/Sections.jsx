@@ -8,7 +8,7 @@ function Sections() {
       <div className="container">
         <div className="hero-content">
 
-          <h1 className="h1 hero-title">Lawal Abdullateef</h1>
+          <h1 className="h1 hero-title">Lawal <br/>Abdullateef</h1>
           <p className="hero-subtitle">Creative Web & App Developer</p>
 
           <div className="hero-banner">

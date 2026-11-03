@@ -10,7 +10,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
  */
 const getVisibleCount = (width) => (width >= 1024 ? 3 : width >= 768 ? 2 : 1);
 
-export default function useSlider(totalItems, { autoplayMs = 4000 } = {}) {
+export default function useSlider(totalItems, { autoplayMs = 1000 } = {}) {
   const sliderRef = useRef(null); // viewport (.slider)
   const trackRef = useRef(null); // moving list (.slider-container)
 

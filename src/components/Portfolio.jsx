@@ -29,23 +29,26 @@ function Portfolio() {
         <ul {...trackProps}>
           {portfolioData.map((item, index) => (
             <li className="slider-item" key={`${item.title}-${index}`}>
-              <div
-                className="portfolio-card img-holder"
-                style={{ "--width": 600, "--height": 600 }}
-              >
-                <img
-                  src={item.image}
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  alt={item.title}
-                  className="img-cover"
-                />
-
-                <div className="card-content">
-                  <h3 className="h3 card-title">{item.title}</h3>
-                  <p className="card-text">{item.category}</p>
+              <div className="portfolio-card">
+                <div
+                  className="card-banner img-holder"
+                  style={{ "--width": 4, "--height": 3 }}
+                >
+                  <img
+                    src={item.image}
+                    width="600"
+                    height="450"
+                    loading="lazy"
+                    alt={item.title}
+                    className="img-cover"
+                  />
                 </div>
+
+                <h3 className="h3 card-title">{item.title}</h3>
+                <p className="card-text">{item.category}</p>
+                <span className="text-lg card-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
                 <a
                   href={item.url}

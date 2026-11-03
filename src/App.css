@@ -756,44 +756,50 @@ body.nav-active {
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
-
 .portfolio-card {
   position: relative;
-  background-color: transparent;
-  transition: var(--cubic-ease-out);
+  background-color: var(--white);
+  height: 100%;
+  padding: 40px;
+  transition: var(--transition-2);
+}
+
+.portfolio-card .card-banner {
+  background-color: var(--white_a5);
 }
 
 .portfolio-card .img-cover {
   transition: var(--cubic-ease-out);
 }
 
-.portfolio-card .card-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  width: 100%;
-  transform: translate(-55%, -50%);
-  opacity: 0;
-  transition: var(--cubic-ease-out);
-  z-index: 1;
+.portfolio-card .card-title {
+  color: var(--content-color, var(--raisin-black));
+  margin-block: 20px;
 }
 
 .portfolio-card .card-text {
-  color: var(--white);
+  color: var(--content-color);
+}
+
+.portfolio-card .card-number {
+  margin-inline-start: auto;
+  font-weight: var(--fw-800);
+  line-height: 0.6;
+  max-width: max-content;
+  margin-block-start: 32px;
+  -webkit-text-stroke: 1px var(--content-color, var(--black));
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+}
+
+.portfolio-card:is(:hover, :focus-within) {
+  background-color: var(--raisin-black);
+  --content-color: var(--white);
 }
 
 .portfolio-card:is(:hover, :focus-within) .img-cover {
-  opacity: 0.1;
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
-
-.portfolio-card:is(:hover, :focus-within) .card-content {
-  transform: translate(-50%, -50%);
-  opacity: 1;
-}
-
-
 
 
 
@@ -1159,3 +1165,6 @@ body.nav-active {
     display: none;
   }
 }
+
+
+

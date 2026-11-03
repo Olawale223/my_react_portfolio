@@ -10,7 +10,7 @@ const portfolioData = [
     {
         image: portfolio1,
         title: "Ago Ventures",
-        url: "https://agoventures.vercel.app/",
+        url: "https://www.agoventuresinter.com/",
         category: "Website Development"
     },
     {

@@ -279,27 +279,70 @@ body.nav-active {
   z-index: 1;
 }
 
+/*-----------------------------------*\
+  #SLIDER (shared by Services + Portfolio)
+
+  --slider-items is set by the useSlider() hook as an inline
+  style on .slider. Do NOT set it in any media query.
+\*-----------------------------------*/
+
 .slider {
   --slider-items: 1;
   --item-gap: 12px;
 
   margin-block-start: 60px;
   overflow: hidden;
+  width: 100%;
 }
 
 .slider-container {
-  position: relative;
+  position: relative; /* offsetParent used for measuring */
   display: flex;
+  flex-wrap: nowrap;
   gap: var(--item-gap);
+  width: 100%;
   transition: transform var(--cubic-ease-out);
 }
 
 .slider-item {
   --total-gap: calc(var(--item-gap) * (var(--slider-items) - 1));
-  --item-width: calc((100% / var(--slider-items)) - (var(--total-gap) / var(--slider-items)));
+  --item-width: calc((100% - var(--total-gap)) / var(--slider-items));
 
-  min-width: var(--item-width);
+  flex: 0 0 var(--item-width);
   width: var(--item-width);
+  min-width: 0;
+}
+
+/* All items fit: lock the track in place */
+.slider.few-items .slider-container {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Per-section gaps (same values as before) */
+.service .slider {
+  --item-gap: 12px;
+}
+
+.portfolio .slider {
+  --item-gap: 0px;
+}
+
+@media (max-width: 574px) {
+  .service .slider {
+    --item-gap: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio .slider {
+    --item-gap: 7px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio .slider {
+    --item-gap: 16px;
+  }
 }
 
 .slider-control {
@@ -633,10 +676,6 @@ body.nav-active {
   transition: var(--transition-2);
 }
 
-/* .service .slider {
-  --item-gap: 16px;
-} */
-
 .service-card .card-icon ion-icon {
   color: var(--content-color, var(--raisin-black));
   font-size: 6rem;
@@ -714,10 +753,6 @@ body.nav-active {
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
-
-.portfolio .slider {
-  --item-gap: 16px;
-}
 
 .portfolio-card {
   position: relative;
@@ -822,10 +857,6 @@ body.nav-active {
     margin-inline: auto;
   }
 
-  .slider {
-    --slider-items: 2;
-  }
-
 
 
   /**
@@ -837,10 +868,6 @@ body.nav-active {
     gap: 32px;
   }
 
-  .portfolio .slider {
-    --item-gap: 0px;
-  }
-
 
   /**
    * FOOTER
@@ -848,19 +875,6 @@ body.nav-active {
 
   .footer-list-title {
     margin-block-end: 8px;
-  }
-
-}
-
-
-
-@media (max-width: 574px) {
-
-  /* .portfolio .slider {
-    --item-gap: 0px;
-  } */
-  .service .slider {
-    --item-gap: 0px;
   }
 
 }
@@ -965,10 +979,6 @@ body.nav-active {
     --fs-4: 2.7rem;
   }
 
-  .portfolio .slider {
-    --item-gap: 7px;
-  }
-
   /**
    * FOOTER
    */
@@ -1015,10 +1025,6 @@ body.nav-active {
 
   .title-wrapper {
     gap: 15%;
-  }
-
-  .slider {
-    --slider-items: 3;
   }
 
 

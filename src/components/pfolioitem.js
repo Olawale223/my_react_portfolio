@@ -13,6 +13,18 @@ const portfolioData = [
         url: "https://agoventures.vercel.app/",
         category: "Website Development"
     },
+    {
+        image: portfolio5,
+        title: "Steppn Stone",
+        url: "https://steppn-stone.com/",
+        category: "Website Development"
+    },
+    {
+        image: portfolio6,
+        title: "Oga Repair",
+        url: "https://https://ogarepair.com/",
+        category: "QA - QC Testing"
+    },
     // {
     //     image: portfolio2,
     //     title: "Rweb",
@@ -32,18 +44,6 @@ const portfolioData = [
         //     category: "UI/UX Design"
         // }
     ,
-    {
-        image: portfolio5,
-        title: "Steppn Stone",
-        url: "https://steppn-stone.com/",
-        category: "Website Development"
-    },
-    {
-        image: portfolio6,
-        title: "Oga Repair",
-        url: "https://https://ogarepair.com/",
-        category: "QA - QC Testing"
-    }, 
 
 ];
 
